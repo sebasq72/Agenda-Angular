@@ -1,0 +1,30 @@
+<!-- <div class="encabezado">
+    <a routerLink='home'> Home </a>
+    <a routerLink="nuevo"> Nuevo Contacto </a>
+</div> -->
+
+
+<p>
+  <mat-toolbar color="primary">
+
+    <a mat-icon-button routerLink='home' style="margin:30px !important;">
+      <h2><span>
+        Home
+      </span>
+      </h2>
+     </a>
+
+    <span class="example-spacer"></span>
+    <span flex></span>
+
+  <a mat-icon-button routerLink="nuevo">
+    <h2><span>
+      Nuevo Contacto
+    </span>
+    </h2>
+  </a>
+  </mat-toolbar>
+</p>
+
+
+<router-outlet></router-outlet>

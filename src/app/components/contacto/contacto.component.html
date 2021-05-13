@@ -1,0 +1,57 @@
+
+<mat-accordion>
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+      <b>  {{ contacto.nombre.toUpperCase() }} {{ contacto.apellidos.toUpperCase() }} </b> - <span class="material-icons md-18 ">face</span>
+
+      </mat-panel-title>
+      <mat-panel-description>
+
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+
+    <table mat-table class="mat-elevation-z8">
+
+      <ng-container matColumnDef="Nombre">
+        <th mat-header-cell *matHeaderCellDef>
+          <button [routerLink]="['/editar' , contacto.id]" mat-raised-button color="green"> Editar </button>
+          <button (click)="borrarContacto(contacto)" mat-raised-button color="warn"> Borrar </button>
+          <button mat-raised-button color="accent" (click)="bloquearContacto(contacto)" >
+              <span *ngIf="!contacto.bloqueado else desbloquear"> Bloquear</span>
+              <ng-template #desbloquear> <span>Desbloquear</span> </ng-template> </button>
+            </th>
+        <td mat-cell >
+
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <table class="mat-table mat-elevation-z8" >
+      <tr class="mat-header-row">
+        <th class="mat-header-cell">Foto</th>
+        <th class="mat-header-cell">Nombre</th>
+        <th class="mat-header-cell">Direccion</th>
+        <th class="mat-header-cell">Telefono</th>
+        <th class="mat-header-cell">Correo</th>
+      </tr>
+      <tr class="mat-row">
+        <td class="mat-cell">
+          <div class="foto">
+            <img src="{{contacto.foto}}">
+          </div>
+        </td>
+        <td class="mat-cell">{{contacto.nombre }} {{contacto.apellidos }}</td>
+        <td class="mat-cell">{{contacto.direccion}}</td>
+        <td class="mat-cell">{{contacto.telefono}}</td>
+        <td class="mat-cell">{{contacto.correo}}</td>
+      </tr>
+    </table>
+
+  </mat-expansion-panel>
+</mat-accordion>

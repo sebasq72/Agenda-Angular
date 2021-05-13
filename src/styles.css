@@ -1,0 +1,39 @@
+/* You can add global styles to this file, and also import other style files */
+
+.foto {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.foto img {
+    height: 128px;
+    width: 128px;
+    border-radius: 50%;
+}
+
+button {
+    padding: 5px;
+    margin: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    width: 100px;
+    color: #2c2a2a;
+}
+
+.btn-negativo {
+    background-color: #FF6B6B;
+}
+
+.btn-positivo {
+    background-color: #FFE66D;
+}
+
+.btn-exito {
+    background-color: #1A535C;
+    color: #F7FFF7;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
