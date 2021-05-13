@@ -15,10 +15,12 @@ export class AgendaService {
    }
 
    getAgenda$() : Observable<IContacto[]>{
+     //Reenvia los datos desde el servicio
+     this.obtenerContactos();
      return this.agenda$.asObservable();
    }
 
- 
+
    actualizarContacto(id :number , nuevo :IContacto){
     this.http.put<ApiContactos>(`/api/agenda/${id}` , nuevo).subscribe( data => {
       if (data.success) {
@@ -48,9 +50,9 @@ export class AgendaService {
    }
 
    bloquearContacto(contacto:IContacto){
-      contacto.bloqueado = !contacto.bloqueado; 
+      contacto.bloqueado = !contacto.bloqueado;
       this.actualizarContacto(contacto.id , contacto);
-   
+
   }
 
 
@@ -63,7 +65,7 @@ export class AgendaService {
         console.log(data.message);
       }
     })
-    
+
    }
 
    obtenerContactos(){
